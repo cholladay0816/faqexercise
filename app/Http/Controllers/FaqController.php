@@ -19,6 +19,11 @@ class FaqController extends Controller
     }
     public function store()
     {
+        request()->validate([
+            'question'=>['required','min:3'],
+            'answer'=>['required','min:3']
+        ]);
+
         $faq = new Faq();
         $faq->question = request('question');
         $faq->answer = request('answer');
@@ -32,6 +37,11 @@ class FaqController extends Controller
 
     public function put(Faq $faq)
     {
+        request()->validate([
+            'question'=>['required','min:3'],
+            'answer'=>['required','min:3']
+        ]);
+        
         $faq->question = request('question');
         $faq->answer = request('answer');
         $faq->save();
