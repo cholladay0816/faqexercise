@@ -41,7 +41,7 @@ class FaqController extends Controller
             'question'=>['required','min:3'],
             'answer'=>['required','min:3']
         ]);
-        
+
         $faq->question = request('question');
         $faq->answer = request('answer');
         $faq->save();

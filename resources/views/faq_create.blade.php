@@ -46,11 +46,11 @@
         @method('POST')
         <div class="form-group">
             <label for="inputQuestion">Question</label>
-            <textarea name="question" class="form-control" id="inputQuestion" aria-describedby="emailHelp"></textarea>
+            <textarea name="question" class="form-control" id="inputQuestion" aria-describedby="emailHelp">{{ old('question') }}</textarea>
         </div>
         <div class="form-group">
             <label for="inputAnswer">Answer</label>
-            <textarea name="answer" class="form-control" id="inputAnswer"></textarea>
+            <textarea name="answer" class="form-control" id="inputAnswer">{{ old('answer') }}</textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit</button>
     </form>
