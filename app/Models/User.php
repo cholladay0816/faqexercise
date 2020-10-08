@@ -58,4 +58,20 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
+
+    public function administrator()
+    {
+        return $this->hasOne(Administrator::class, 'user_id', 'id');
+    }
+    public function isAdministrator()
+    {
+        return !is_null($this->administrator);
+    }
+    public function hasAbility($ability)
+    {
+        if(!$this->isAdministrator()) {
+            return false;
+        }
+        return $this->administrator->abilities()->contains($ability);
+    }
 }

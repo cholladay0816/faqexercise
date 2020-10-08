@@ -33,6 +33,7 @@
                             <a href="{{ route('register') }}" class="ml-4 text-sm text-gray-700 underline">Register</a>
                         @endif
                     @endif
+                    <a href="{{ url('/faq') }}" class="ml-4 text-sm text-gray-700 underline">Visit FAQ</a>
                 </div>
             @endif
 
