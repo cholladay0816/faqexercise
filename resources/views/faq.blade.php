@@ -42,7 +42,7 @@
 <h1>Frequently Asked Questions</h1>
 
 <div class="accordion" id="accordionExample">
-    @foreach($faq as $question)
+    @forelse($faq as $question)
         <div class="card">
             <div class="card-header row" id="heading{{$question->id}}">
                 <h2 class="col mb-0">
@@ -68,7 +68,13 @@
                 </div>
             </div>
         </div>
-    @endforeach
+    @empty
+        <span>No questions found.</span>
+    @endforelse
+        <hr>
+        @can('manage-faq')
+            <a class='btn btn-primary' href="{{url('/faq/new')}}">Create new Question</a>
+        @endcan
 </div>
 </body>
 </html>

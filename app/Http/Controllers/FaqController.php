@@ -23,6 +23,7 @@ class FaqController extends Controller
         $faq->question = request('question');
         $faq->answer = request('answer');
         $faq->save();
+        return redirect('/faq');
     }
     public function edit(Faq $faq)
     {
